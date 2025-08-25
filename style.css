@@ -1,0 +1,109 @@
+/* ===== Global Reset & Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background: #3f51b5;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ===== Navigation (Flexbox) ===== */
+nav {
+    background: #222;
+}
+.nav-links {
+    display: flex;              /* Flexbox */
+    justify-content: center;    /* Center horizontally */
+    list-style: none;
+    flex-wrap: wrap;
+}
+.nav-links li {
+    margin: 0.5rem 1rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+/* ===== Grid Layout ===== */
+.grid-layout {
+    display: grid;               /* CSS Grid */
+    grid-template-columns: 2fr 1fr; /* Content + Sidebar */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== Content Area ===== */
+.content {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    background: #e1e1e1;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* ===== Cards (Flexbox inside Content) ===== */
+.card-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.card {
+    flex: 1 1 150px;  /* Grow, shrink, minimum width */
+    background: #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #3f51b5;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 1fr; /* Stack content and sidebar */
+    }
+    .sidebar {
+        order: -1; /* Show sidebar above content */
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-container {
+        flex-direction: column; /* Stack cards */
+    }
+}
